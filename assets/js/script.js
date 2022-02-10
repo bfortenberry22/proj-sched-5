@@ -6,9 +6,7 @@ var getDate = function(){
     var rightNow= moment().format("dddd, MMMM Do, YYYY");
     dateEl.append(rightNow);
 };
-
 getDate();
-
 
 //create a table
 
