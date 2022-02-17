@@ -3,10 +3,16 @@ var dateEl = document.querySelector("#currentDay");
 var descriptionEl = document.querySelector(".description");
 
 //function to add date
-var getDate = function(){
-    var rightNow= moment().format("dddd, MMMM Do, YYYY");
+var getDateInitial = function(){
+    var rightNow= moment().format("dddd, MMMM Do");
     dateEl.append(rightNow);
 };
+//function to update date 
+var getDate = function(){
+    var rightNow= moment().format("dddd, MMMM Do, YYYY");
+    dateEl.replaceWith(rightNow);
+    console.log("date has been update" + rightNow);
+}
 
 //edit event
 $(".row").on("click", "p", function(event){
@@ -145,7 +151,10 @@ var loadEvent = function(){
     document.getElementById("hFour").value=localStorage.getItem("eventFour");
     document.getElementById("hFive").value=localStorage.getItem("eventFive");
 }
-   
-loadEvent();    
+
+//loads locally stored events, color codes based on current time and gets the initial date upon loading page
+loadEvent();
 colorTime();
-getDate();
+getDateInitial();    
+//updates date and time for color coding every 1 minute
+setInterval(function(){colorTime();getDate();}, 60*1000);
