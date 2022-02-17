@@ -136,10 +136,16 @@ document.getElementById("bFive").addEventListener("click", function(){
 //function to load events
 var loadEvent = function(){
     document.getElementById("hNine").value=localStorage.getItem("eventNine");
+    document.getElementById("hTen").value=localStorage.getItem("eventTen");
+    document.getElementById("hEleven").value=localStorage.getItem("eventEleven");
+    document.getElementById("hTwelve").value=localStorage.getItem("eventTwelve");
+    document.getElementById("hOne").value=localStorage.getItem("eventOne");
+    document.getElementById("hTwo").value=localStorage.getItem("eventTwo");
+    document.getElementById("hThree").value=localStorage.getItem("eventThree");
+    document.getElementById("hFour").value=localStorage.getItem("eventFour");
+    document.getElementById("hFive").value=localStorage.getItem("eventFive");
 }
-
-    
-    
+   
 loadEvent();    
 colorTime();
 getDate();
