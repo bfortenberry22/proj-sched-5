@@ -7,15 +7,13 @@ var getDate = function(){
     var rightNow= moment().format("dddd, MMMM Do, YYYY");
     dateEl.append(rightNow);
 };
-getDate();
-
 
 //edit event
 $(".row").on("click", "p", function(event){
     // get current text of p element
     var text = $(this)
-        .text()
-        .trim();
+    .text()
+    .trim();
     // replace element with a new textarea
     var textInput = $("<textarea>").val(text)
     $(this).replaceWith(textInput);
@@ -97,10 +95,51 @@ var colorTime = function(){
         $("#hFive").removeClass("future");
         $("#hFive").addClass("past");
     }
-    
+};
+//save to local storage when save button is clicked
+document.getElementById("bNine").addEventListener("click", function(){
+    var savedEvents = document.getElementById('hNine').value;
+    localStorage.setItem("eventNine", savedEvents);
+})
+document.getElementById("bTen").addEventListener("click", function(){
+    var savedEvents = document.getElementById('hTen').value;
+    localStorage.setItem("eventTen", savedEvents);
+})
+document.getElementById("bEleven").addEventListener("click", function(){
+    var savedEvents = document.getElementById('hEleven').value;
+    localStorage.setItem("eventEleven", savedEvents);
+})
+document.getElementById("bTwelve").addEventListener("click", function(){
+    var savedEvents = document.getElementById('hTwelve').value;
+    localStorage.setItem("eventTwelve", savedEvents);
+})
+document.getElementById("bOne").addEventListener("click", function(){
+    var savedEvents = document.getElementById('hOne').value;
+    localStorage.setItem("eventOne", savedEvents);
+})
+document.getElementById("bTwo").addEventListener("click", function(){
+    var savedEvents = document.getElementById('hTwo').value;
+    localStorage.setItem("eventTwo", savedEvents);
+})
+document.getElementById("bThree").addEventListener("click", function(){
+    var savedEvents = document.getElementById('hThree').value;
+    localStorage.setItem("eventThree", savedEvents);
+})
+document.getElementById("bFour").addEventListener("click", function(){
+    var savedEvents = document.getElementById('hFour').value;
+    localStorage.setItem("eventFour", savedEvents);
+})
+document.getElementById("bFive").addEventListener("click", function(){
+    var savedEvents = document.getElementById('hFive').value;
+    localStorage.setItem("eventFive", savedEvents);
+})
+//function to load events
+var loadEvent = function(){
+    document.getElementById("hNine").value=localStorage.getItem("eventNine");
 }
+
+    
+    
+loadEvent();    
 colorTime();
-
-
-
-//store in local storage
+getDate();
